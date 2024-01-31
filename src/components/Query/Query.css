@@ -1,0 +1,15 @@
+.query-container {
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1, h5 {
+    overflow: hidden;
+}
+
+h5 {
+    font-weight: 500;
+}

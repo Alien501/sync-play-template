@@ -1,0 +1,22 @@
+.playlist-card-container {
+    width: 290px;
+    padding: calc(var(--padding) + 4px);
+    border-radius: var(--border-radius);
+    background-color: var(--color-black-card);
+    margin: 40px auto;
+}
+
+.playlist-top-container, .playlist-card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    color: var(--color-grey);
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-bold);
+    overflow: hidden;
+}
+
+.playlist-card-heading {
+    color: var(--color-white);
+}

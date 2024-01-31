@@ -1,0 +1,64 @@
+.file-card-container {
+    background-color: var(--color-light-blue);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--padding);
+    border-radius: calc(var(--border-radius) + 1px);
+    width: 290px;
+
+}
+
+.file-head {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-med);
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.file-format {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-small);
+}
+
+.file-name-container {
+    height: 60px;
+    background-color: var(--color-white);
+    color: var(--color-dark-blue);
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-med);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 20px auto;
+}
+
+#file-upload {
+    display: none;
+    background-color: saddlebrown;
+}
+
+.file-btn {
+    width: 90%;
+    height: 60px;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-bold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-dark-blue);
+    cursor: pointer;
+}
+
+.file-btn:active {
+    scale: .9;
+}

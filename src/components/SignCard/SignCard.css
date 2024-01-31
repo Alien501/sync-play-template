@@ -1,0 +1,49 @@
+.sign-in-card-container {
+    margin: 200px auto 100px auto;
+    padding: var(--padding);
+    border-radius: calc(var(--border-radius) + 1px);
+    background-color: var(--color-green);
+    width: 290px;
+    height: max-content;
+    color: var(--color-white);
+    animation: fadeInSign .7s ease 0s 1  ;
+}
+
+.head-block {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--genral-line-height);
+    text-align: center;
+    overflow: hidden;
+    margin: 30px auto;
+}
+
+.permission-block {
+    margin: 10px 10px;
+}
+
+.permission-block h3 {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-med);
+}
+
+.permission-block ul li {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-small);
+    margin-left: 20px;
+}
+
+.sign-in-card-container button{
+    margin: 20px auto;
+    width: 90%;
+}
+
+@keyframes fadeInSign {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100vh, 0);
+    } 100% {
+        transform: translate3d(0%, 0%, 0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,20 @@
+.primary-button {
+    border: none;
+    width: 80%;
+    display: block;
+    height: 40px;
+    border-radius: var(--border-radius);
+    font-size: calc(var(--font-size-2) - .2rem);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--genral-line-height);
+    cursor: pointer;
+
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+}
+
+.primary-button:hover, .primary-button:active {
+    cursor: pointer;
+    background-color: var(--btn-text-color);
+    color: var(--btn-bg-color);
+}
