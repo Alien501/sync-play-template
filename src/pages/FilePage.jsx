@@ -8,6 +8,7 @@ import SongCard from "../components/SongCard/SongCard";
 import Button from "../components/Button/Button";
 
 import { theWholeReasonForApp } from "../services/spotifyServices";
+import Loader from "../components/Loader/Loader";
 
 
 const FilePage = () => {
@@ -68,6 +69,11 @@ const FilePage = () => {
         });
     }
 
+    async function onButtonClick() {
+        setIsProcessStarted(true);
+        theWholeReasonForApp(fileName, songList, modifyList);
+    }
+
     return(
         <div className="file-page-container">
             <FileCard
@@ -79,14 +85,19 @@ const FilePage = () => {
                 songList={songList}
             />
 
-            {isProcessStarted && <div className="song-status-container-1">
-                {`Completed: ` + stat}
-            </div>}
+            {isProcessStarted && <Loader />}
 
-            <Button
+            {isProcessStarted &&
+            <div className="song-status-container-1">
+                {`No. of Songs Added: ` + stat}
+            </div>
+            }
+
+
+            {!isProcessStarted && <Button
                 name={'Start'}
-                onClick={() => {setIsProcessStarted(true);theWholeReasonForApp(fileName, songList, modifyList)}}
-                isActive={(fileContent.length == 0)? false: true}
+                onClick={onButtonClick}
+                isActive={((fileContent.length == 0)? false: true)}
                 buttonStyle={
                     {
                         '--btn-text-color': 'var(--color-white)',
@@ -95,7 +106,7 @@ const FilePage = () => {
                         width: '290px'
                     }
                 }
-            />
+            />}
         </div>
     )
 }

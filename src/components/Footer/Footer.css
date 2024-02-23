@@ -9,6 +9,7 @@
     font-weight: 500;
     height: max-content;
     padding: 5px;
+    transition: all .1s ease-in-out !important;
 }
 
 .social-link-container {
@@ -26,10 +27,10 @@
     align-items: center;
     text-decoration: none;
     color: var(--color-grey);
+    transition: all .1s ease-in-out !important;
 }
 
 .footer-menu:hover {
-    transition: .3s ease !important;
     color: var(--color-white);
 }
 

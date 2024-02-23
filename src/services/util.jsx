@@ -22,7 +22,7 @@ const extractSongNameM3U = (fileContent) => {
 const onFileSelect = (event, setFileName, setFileContent) => {
     try {
         let {name , type} = event.target.files[0];
-        if(type === "audio/x-mpegurl"){
+        if(name.split('.')[name.split('.').length - 1] === 'm3u' || type === "audio/x-mpegurl"){
             setFileName(name);
             var reader = new FileReader();
 

@@ -94,7 +94,7 @@ const getSongUri = async (songName, artistDetails) => {
     const atk = localStorage.getItem('accessToken');
     try {
         res = await fetch(
-            `${SEARCH_TRACK}?q=${songName}&artist ${artistDetails}&type=album%2Ctrack&limit=5&offset=0`,
+            `${SEARCH_TRACK}?q=${songName}&artist=${artistDetails}&type=album%2Ctrack&limit=5&offset=0`,
             {
                 method: 'GET',
                 headers: {
@@ -190,6 +190,7 @@ const addSongToPlaylist = async (songUri, playlistId) => {
                 }, 2500);
             })
         }
+        alert('Completed Successfully!');
         return true; // Success
     } catch (error) {
         return false;   // fucked up
@@ -227,9 +228,9 @@ const getAllPlaylistIdOfUser = async (fileName) => {
         }
         if(response.ok){
             const data = await response.json();
-            const playlist_list = await data.items;
-            const playlist_name = playlist_list.map(e => e.name);
+            const playlist_list = data.items;
             if(playlist_list.length != 0){
+                const playlist_name = playlist_list.map(e => e.name);
                 if(playlist_name.includes(fileName)){
                     const playlistData = playlist_list[playlist_name.indexOf(fileName)]
                     return playlistData.id;
@@ -237,6 +238,9 @@ const getAllPlaylistIdOfUser = async (fileName) => {
                     const createNewPlaylistResponse = await createNewPlaylist(fileName);
                     return createNewPlaylistResponse.id;
                 }
+            }else {
+                const createNewPlaylistResponse = await createNewPlaylist(fileName);
+                return createNewPlaylistResponse.id;
             }
         }
         return null;
@@ -277,7 +281,11 @@ const theWholeReasonForApp = async (fileName, songList, modifyList) => {
                 modifyList(index[i], 1);
             }     
         }
-        alert('Completed Successfully!')
+    }else{
+        alert('Something went wrong!')
+        for (let i = 0; i < songList.length; i++) {
+            modifyList(songList[i], 1);
+        }
     }
 }
 
